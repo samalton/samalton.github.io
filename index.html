@@ -8,43 +8,74 @@
 
     <title>Sam's Site</title>
 
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- Load the Paper.js library -->
+	<script type="text/javascript" src="js/paper.js"></script>
+
+	
 </head>
 
-<body>
+<body id="home">
+	<div id="width">
+		<div id="top-nav">
+			<span>Home</span>
+			<span>tab</span>
+			<span>tab</span>
+			<span>tab</span>
+			<span>tab</span>
+		</div>
+		<div id="content">
+			<div class="left-content">
+				<img src=""/>
+			</div>
+			<div class="right-content">
+				<h2></h2>
+				<p></p>
+			</div>
+		</div>
 
-	<h1>Hello?</h1>
-	<p>At some point I'll make this into a real site.</p>
+		<h1>Hello?</h1>
+		<p>At some point I'll make this into a real site.</p>
 
-	<p>Click <a href='404.html'>this link here</a> Raed </p>
+		<p>But what do I wanna have on this site?</p>
+		<ul>
+			<li>a bunch of really extra javascript features
+				<ul>
+					<li>"Build the door to enter the next page"</li>
+				</ul>
+			</li>
+			<li>ridiculous over the top css animations
+				<ul>
+					<li>flashy but still useable</li>
+				</ul>
+			</li>
+			<li>a train animation showing it's wheels turning, but you have to keep feeding it coal to keep it moving</li>
+			<li>a big pirate ship wheel that you can interact with
+				<ul>
+					<li>could also steer a ship to different pages on the site</li>
+				</ul>
+			</li>
+			<li>all my courses throughout the years?
+				<ul>
+					<li>schedule</li>
+					<li>description of course</li>
+					<li>pictures of what I did</li>
+					<li>might be too dry</li>
+				</ul>
+			</li>
+			<li>showing off some of the things I've made/helped make
+				<ul>
+					<li>agsolutions frontend site</li>
+					<li>customerfirstthinking.ca quiz</li>
+					<li>talk about agdeliver (using react)</li>
+				</ul>
+			</li>
+		</ul>
 
-	<p>But what do I wanna have on this site?</p>
-	<ul>
-		<li>a bunch of really extra javascript features
-			<ul>
-				<li>"Build the door to enter the next page"</li>
-			</ul>
-		</li>
-		<li>ridiculous over the top css animations
-			<ul>
-				<li>flashy but still useable</li>
-			</ul>
-		</li>
-		<li>a big pirate ship wheel that you can interact with
-			<ul>
-				<li>could also steer a ship to different pages on the site</li>
-			</ul>
-		</li>
-		<li>all my courses throughout the years?
-			<ul>
-				<li>schedule</li>
-				<li>description of course</li>
-				<li>pictures of what I did</li>
-				<li>might be too dry</li>
-			</ul>
-		</li>
-	</ul>
+		<canvas id="canvas" class="pirate-wheel" resize></canvas>
+	</div>
 
-	<script src="js/script.js"></script>
+	<script type="text/paperscript" src="js/script.js" canvas="canvas"></script>
 </body>
 </html>
