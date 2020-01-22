@@ -1,6 +1,6 @@
 body {
     /* position: relative; */
-    background-color: pink;
+    background-color: #FCF6F5FF;
     font-family: Helvetica, Verdana, sans-serif;
 }
 
@@ -13,22 +13,111 @@ body {
 #top-nav {
     width: 100%;
     max-width: 1440px;
-    position: absolute;
     height: 100px;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#top-nav a {
+    border-top: 1em #b44956 solid;
+    border-bottom: 1em #b44956 solid;
+    border-right: 0.5em #b44956 solid;
+    border-left: 0.5em #b44956 solid;
+    flex-grow: 1;
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+    background: #FCF6F5FF;
+    cursor: pointer;
+}
+
+#top-nav a:last-child {
+    border-right: 1em #b44956 solid;
+}
+
+#top-nav a:first-child {
+    border-left: 1em #b44956 solid;
+}
+
+#top-nav a:after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    animation: nav-reset 0.5s 1 forwards;
+    transform: translate(-50%, -50%);
+    background-color: #3f51b5;
+}
+
+#top-nav a:hover:after {
+    opacity: 0.5;
+    background-color: #3f51b5;
+    animation: nav-hovered 0.5s 1 forwards;
+}
+
+@keyframes nav-hovered {
+    0% {transform: translate(-50%, -50%) rotate(0deg); opacity: 0.05; border-radius: 0;}
+    0% {opacity: 0.3}
+    100% {transform: translate(-50%, -50%) rotate(45deg); opacity: 0.5; border-radius: 50%;}
+}
+
+@keyframes nav-reset {
+    0% {transform: translate(-50%, -50%) rotate(45deg); opacity: 0.5; border-radius: 50%;}
+    100% {transform: translate(-50%, -50%) rotate(90deg); opacity: 0; border-radius: 0;}
+}
+
+#top-nav a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #width {
     margin: auto;
     width: 100%;
     max-width: 1440px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #content {
-    margin-top: 125px;
+    margin: 25px 0;
+    display: flex;
+    flex-grow: 1;
+}
+
+.half-content {
+    width: 50%;
+}
+
+.circle-container {
+    background: #FCF6F5FF;
+    border-right: 0.5em;
+}
+
+.circle-image {
+    border-radius: 50%;
+    width: 300px;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1em #b44956 solid;
+}
+
+.intro-container {
+    border: 1em #b44956 solid;
+    padding: 1em;
 }
 
 .pirate-wheel {
