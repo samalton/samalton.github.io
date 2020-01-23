@@ -20,16 +20,17 @@ body {
 }
 
 #top-nav a {
-    border-top: 1em #b44956 solid;
-    border-bottom: 1em #b44956 solid;
-    border-right: 0.5em #b44956 solid;
-    border-left: 0.5em #b44956 solid;
+    border: 0.5em #b44956 solid;
     flex-grow: 1;
     text-align: center;
     max-width: 100%;
     position: relative;
     background: #FCF6F5FF;
     cursor: pointer;
+}
+
+#top-nav a.current {
+    color: #b44956;
 }
 
 #top-nav a:last-child {
@@ -45,29 +46,21 @@ body {
     position: absolute;
     opacity: 0;
     width: 100px;
-    height: 100px;
+    height: 25px;
     top: 50%;
     left: 50%;
-    animation: nav-reset 0.5s 1 forwards;
     transform: translate(-50%, -50%);
-    background-color: #3f51b5;
+    background-color: #b4495688;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+}
+
+#top-nav a.current:after {
+    background-color: #00000044;
 }
 
 #top-nav a:hover:after {
     opacity: 0.5;
-    background-color: #3f51b5;
-    animation: nav-hovered 0.5s 1 forwards;
-}
-
-@keyframes nav-hovered {
-    0% {transform: translate(-50%, -50%) rotate(0deg); opacity: 0.05; border-radius: 0;}
-    0% {opacity: 0.3}
-    100% {transform: translate(-50%, -50%) rotate(45deg); opacity: 0.5; border-radius: 50%;}
-}
-
-@keyframes nav-reset {
-    0% {transform: translate(-50%, -50%) rotate(45deg); opacity: 0.5; border-radius: 50%;}
-    100% {transform: translate(-50%, -50%) rotate(90deg); opacity: 0; border-radius: 0;}
 }
 
 #top-nav a span {
@@ -78,6 +71,7 @@ body {
     z-index: 10;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1em;
 }
 
 #width {
@@ -106,7 +100,7 @@ body {
 
 .circle-image {
     border-radius: 50%;
-    width: 300px;
+    width: 350px;
     margin: auto;
     display: block;
     position: relative;
@@ -116,8 +110,14 @@ body {
 }
 
 .intro-container {
-    border: 1em #b44956 solid;
+    /* border: 1em #b44956 solid; */
     padding: 1em;
+}
+
+.intro-container h1 {
+    font-size: 4em;
+    margin-bottom: 0;
+    color: #b44956;
 }
 
 .pirate-wheel {
