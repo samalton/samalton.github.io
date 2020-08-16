@@ -1,3 +1,7 @@
+:root {
+    --main-bg-color: #669999;
+  }
+
 body {
     /* position: relative; */
     background-color: #FCF6F5FF;
@@ -10,6 +14,12 @@ body {
     margin: 0;
 }
 
+#top-nav-bg {
+    display: flex;
+    max-width: 1640px;
+    margin: auto;
+}
+
 #top-nav {
     width: 100%;
     max-width: 1440px;
@@ -17,10 +27,15 @@ body {
     display: flex;
     align-items: stretch;
     justify-content: center;
+    order: 2;
+    flex-basis: 100%;
+    margin: 0 -1px;
 }
 
 #top-nav a {
-    border: 0.5em #b44956 solid;
+    border: 0.5em var(--main-bg-color) solid;
+    border-bottom: 0.75em var(--main-bg-color) solid;
+    border-top: 0.75em var(--main-bg-color) solid;
     flex-grow: 1;
     text-align: center;
     max-width: 100%;
@@ -30,29 +45,21 @@ body {
 }
 
 #top-nav a.current {
-    color: #b44956;
-}
-
-#top-nav a:last-child {
-    border-right: 1em #b44956 solid;
-}
-
-#top-nav a:first-child {
-    border-left: 1em #b44956 solid;
+    color: var(--main-bg-color);
 }
 
 #top-nav a:after {
     content: '';
     position: absolute;
     opacity: 0;
-    width: 100px;
-    height: 25px;
+    width: calc(100% - 2em);
+    height: calc(100% - 1.5em);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #b4495688;
-    transition: opacity 0.2s;
-    border-radius: 5px;
+    background-color: var(--main-bg-color);
+    transition: all 0.2s;
+    border-radius: 50px;
 }
 
 #top-nav a.current:after {
@@ -61,6 +68,7 @@ body {
 
 #top-nav a:hover:after {
     opacity: 0.5;
+    border-radius: 50px 0;
 }
 
 #top-nav a span {
@@ -74,11 +82,25 @@ body {
     font-size: 1em;
 }
 
-#width {
+#nav-feature-left {
+    order: 1;
+    flex-grow: 1;
+    background-color: var(--main-bg-color);
+    border-radius: 0 0 0 100px;
+}
+
+#nav-feature-right {
+    order: 3;
+    flex-grow: 1;
+    background-color: var(--main-bg-color);
+    border-radius: 0 0 100px 0;
+}
+
+#content-holder {
     margin: auto;
     width: 100%;
     max-width: 1440px;
-    height: 100%;
+    height: calc(100% - 100px);
     display: flex;
     flex-direction: column;
 }
@@ -104,20 +126,18 @@ body {
     margin: auto;
     display: block;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 1em #b44956 solid;
+    top: 120px;
+    border: 1em var(--main-bg-color) solid;
 }
 
 .intro-container {
-    /* border: 1em #b44956 solid; */
     padding: 1em;
 }
 
 .intro-container h1 {
     font-size: 4em;
     margin-bottom: 0;
-    color: #b44956;
+    color: var(--main-bg-color);
 }
 
 .pirate-wheel {
